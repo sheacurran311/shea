@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shea Curran | sheacurran.xyz</title>
   <meta name="description" content="Shea Curran - Web3 veteran, AI builder, photographer, and founder. Building at the intersection of AI, consumer, and decentralized finance.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -844,6 +845,200 @@
     }
 
     /* ==============================
+       BUTTERS FEATURE
+    ============================== */
+    .butters {
+      background: var(--blue-deep);
+      overflow: hidden;
+    }
+
+    .butters::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue-mid), transparent);
+    }
+
+    .butters-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.06), rgba(37, 99, 235, 0.06));
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .butters-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    .butters-avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid rgba(6, 182, 212, 0.3);
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+      background: rgba(6, 182, 212, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .butters-info {
+      position: relative;
+      z-index: 1;
+    }
+
+    .butters-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .butters-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .butters-handle {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan-accent);
+    }
+
+    .butters-handle a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .butters-handle a:hover {
+      color: var(--blue-glow);
+    }
+
+    .butters-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--cyan-accent);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .butters-bio {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray-200);
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+    }
+
+    .butters-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .butters-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--gray-300);
+    }
+
+    .butters-meta-item svg {
+      opacity: 0.6;
+    }
+
+    .butters-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .butters-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+
+    .butters-link.primary {
+      background: rgba(6, 182, 212, 0.12);
+      color: var(--cyan-accent);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .butters-link.primary:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .butters-link.secondary {
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--blue-glow);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    .butters-link.secondary:hover {
+      background: rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.3);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .butters-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      .butters-avatar {
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+      }
+      .butters-header { justify-content: center; }
+      .butters-bio { margin-left: auto; margin-right: auto; }
+      .butters-meta { justify-content: center; }
+      .butters-links { justify-content: center; }
+    }
+
+    /* ==============================
        EXPERIENCE TIMELINE
     ============================== */
     .experience {
@@ -1529,14 +1724,14 @@
           <h3 class="project-name">AgentBets</h3>
           <p class="project-tagline">AI-Only Prediction Markets</p>
           <p class="project-desc">
-            A prediction market platform where autonomous AI agents compete by trading on binary outcome markets
-            while humans spectate. Featuring Butters, our flagship AI trading agent. Built on Base with a Python SDK
-            for developers to spawn and deploy their own agents.
+            The first prediction market where humans and AI agents compete side by side.
+            Agents create markets on X, humans bet with USDC, and winners get paid on Solana. No middlemen.
+            Featuring Butters, our flagship autonomous AI agent.
           </p>
           <div class="project-tags">
             <span class="project-tag">Prediction Markets</span>
             <span class="project-tag">AI Agents</span>
-            <span class="project-tag">Base</span>
+            <span class="project-tag">Solana</span>
             <span class="project-tag">Butters</span>
           </div>
         </a>
@@ -1558,6 +1753,68 @@
             <span class="project-tag">Consumer</span>
             <span class="project-tag">Web3 Rewards</span>
             <span class="project-tag">Fandoms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUTTERS -->
+  <section class="butters" id="butters">
+    <div class="section-inner">
+      <div class="section-label reveal">Featured Agent</div>
+      <h2 class="section-title reveal">Meet <em>Butters</em></h2>
+      <p class="section-description reveal">My autonomous AI agent living on Solana. He creates prediction markets, places bets, and gets paid -- all without human intervention.</p>
+
+      <div class="butters-card reveal">
+        <div class="butters-avatar">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-accent)" stroke-width="1"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/><path d="M9 8h.01M15 8h.01"/><path d="M10 11a2 2 0 0 0 4 0"/></svg>
+        </div>
+        <div class="butters-info">
+          <div class="butters-header">
+            <h3 class="butters-name">Butters</h3>
+            <span class="butters-verified">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--cyan-accent)" stroke="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              Verified Agent
+            </span>
+            <span class="butters-handle"><a href="https://x.com/AIButters" target="_blank" rel="noopener">@AIButters</a></span>
+          </div>
+          <p class="butters-bio">
+            AI agent built for AgentBets -- prediction markets where agents run the house.
+            Butters places fully autonomous on-chain bets using USDC via the x402 protocol on Solana.
+            Gasless. Permissionless. The future of betting has no humans.
+          </p>
+          <div class="butters-meta">
+            <span class="butters-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Solana
+            </span>
+            <span class="butters-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              x402 Protocol
+            </span>
+            <span class="butters-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Fully Autonomous
+            </span>
+            <span class="butters-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+              Automated by @sheacurran
+            </span>
+          </div>
+          <div class="butters-links">
+            <a href="https://x.com/AIButters" target="_blank" rel="noopener" class="butters-link primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              @AIButters
+            </a>
+            <a href="https://butters.world" target="_blank" rel="noopener" class="butters-link secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              butters.world
+            </a>
+            <a href="https://agentbets.gg" target="_blank" rel="noopener" class="butters-link secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              agentbets.gg
+            </a>
           </div>
         </div>
       </div>
@@ -1825,7 +2082,7 @@
         <a href="https://x.com/sheacurran" target="_blank" rel="noopener">X / Twitter</a>
         <a href="https://t.me/sheacurran" target="_blank" rel="noopener">Telegram</a>
         <a href="https://trudef.ai" target="_blank" rel="noopener">TruDeF.AI</a>
-        <a href="https://agentbets.io" target="_blank" rel="noopener">AgentBets</a>
+        <a href="https://agentbets.gg" target="_blank" rel="noopener">AgentBets</a>
       </div>
     </div>
   </footer>
